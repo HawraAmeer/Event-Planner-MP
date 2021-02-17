@@ -73,7 +73,7 @@ exports.createEvent = async (req, res) => {
   try {
     if (req.body.length) {
       const events = await Event.bulkCreate(req.body);
-      res.status(201).json({ message: events });
+      res.status(201).json(events);
     } else {
       const newEvent = await Event.create(req.body);
       res.status(201).json(newEvent);
